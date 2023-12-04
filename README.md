@@ -1,4 +1,4 @@
-# Template para ambiente de desenvolvimento com Laravel
+# Template para ambiente de desenvolvimento com Laravel 🐳
 
 Este template é um projeto Laravel que usa Docker para criar um ambiente de desenvolvimento com as seguintes características:
 
@@ -14,7 +14,8 @@ Siga os passos abaixo para configurar e executar este template em sua máquina l
 
 ### Passo 1: Clonar o repositório
 
-Use o comando `git clone` para clonar este repositório em seu diretório de preferência (subistitua caminho/para/seu/projeto pelo caminho no qual deseja clonar o repositório. EX: ~/Projects/app-laravel). Em seguida, navegue até o diretório do projeto e remova o diretório `.git` para iniciar um novo repositório.
+Use o comando `git clone` para clonar este repositório em seu diretório de preferência (substitua caminho/para/seu/projeto pelo caminho no qual deseja clonar o repositório. EX: ~/Projects/app-laravel). 
+Em seguida, navegue até o diretório do projeto e remova o diretório `.git` para iniciar um novo repositório.
 
 ```bash
 git clone https://github.com/Alan01777/Laravel-template.git caminho/para/seu/projeto
