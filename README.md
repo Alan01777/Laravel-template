@@ -14,18 +14,18 @@ Siga os passos abaixo para configurar e executar este template em sua máquina l
 
 ### Passo 1: Clonar o repositório
 
-Use o comando ```git clone``` para clonar este repositório em seu diretório de preferência. Em seguida, navegue até o diretório do projeto e remova o diretório ```.git``` para iniciar um novo repositório.
+Use o comando `git clone` para clonar este repositório em seu diretório de preferência (subistitua caminho/para/seu/projeto pelo caminho no qual deseja clonar o repositório. EX: ~/Projects/app-laravel). Em seguida, navegue até o diretório do projeto e remova o diretório `.git` para iniciar um novo repositório.
 
 ```bash
-git clone https://github.com/Alan01777/Laravel-template.git path/to/your/project/and/name
-cd path/to/your/project/and/name
+git clone https://github.com/Alan01777/Laravel-template.git caminho/para/seu/projeto
+cd caminho/para/seu/projeto
 rm -rf .git
 git init
 ```
 
 ### Passo 2: Copiar o arquivo .env
 
-Copie o arquivo .```env.example``` para um novo arquivo chamado ```.env```. Este arquivo contém as variáveis de ambiente que serão usadas pelo Docker e pelo Laravel.
+Copie o arquivo .`env.example` para um novo arquivo chamado `.env`. Este arquivo contém as variáveis de ambiente que serão usadas pelo Docker e pelo Laravel.
 
 ```bash
 cp .env.example .env
@@ -33,11 +33,11 @@ cp .env.example .env
 
 ### Passo 3: Configurar o banco de dados
 
-Edite o arquivo ```.env``` e altere os valores das seguintes variáveis de acordo com as suas preferências. Exemplo:
+Edite o arquivo `.env` e altere os valores das seguintes variáveis de acordo com as suas preferências. Exemplo:
 
 ```bash
 DB_CONNECTION=mysql
-DB_HOST=mysql
+DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=laravel-template
 DB_USERNAME=root
@@ -54,7 +54,7 @@ Use o comando `docker compose up -d` para iniciar os contêineres Docker em segu
 -   db: o contêiner que executa o servidor MySQL.
 -   nginx: o contêiner que executa o servidor web Nginx.
 
-Você pode verificar o status dos contêineres com o comando ```docker compose ps```.
+Você pode verificar o status dos contêineres com o comando `docker compose ps`.
 
 ```bash
 docker compose up -d
@@ -62,7 +62,7 @@ docker compose up -d
 
 ### Passo 5: Instalar as dependências e gerar a chave do aplicativo
 
-Use o comando `docker compose exec` para executar comandos dentro dos contêineres. Para instalar as dependências do projeto, use o comando ```composer install``` dentro do contêiner app. Para gerar a chave do aplicativo Laravel, use o comando `php artisan key:generate` dentro do mesmo contêiner.
+Use o comando `docker compose exec` para executar comandos dentro dos contêineres. Para instalar as dependências do projeto, use o comando `composer install` dentro do contêiner app. Para gerar a chave do aplicativo Laravel, use o comando `php artisan key:generate` dentro do mesmo contêiner.
 
 ```bash
 docker compose exec app bash -c "composer install"
@@ -71,7 +71,9 @@ docker compose exec app bash -c "php artisan key:generate"
 
 ### Passo 6: Executar as migrações do banco de dados
 
-Para criar as tabelas do banco de dados, use o comando ```php artisan migrate``` dentro do contêiner app. Este comando irá executar os arquivos de migração que estão na pasta database/migrations.
+Para criar as tabelas do banco de dados, use o comando `php artisan migrate` dentro do contêiner app. Este comando irá executar os arquivos de migração que estão na pasta database/migrations.
+
+Observação: Pode ser necessário esperar alguns momentos até que o container do MariaDB esteja pronto para receber novas conexões a partir do momento de sua inicialização.
 
 ```bash
 docker compose exec app bash -c "php artisan migrate"
@@ -79,4 +81,4 @@ docker compose exec app bash -c "php artisan migrate"
 
 ## Pronto!
 
-Agora você pode acessar o seu projeto Laravel no endereço http://localhost. Você também pode acessar o banco de dados MariaDB com o cliente de sua preferência, usando as credenciais definidas no arquivo ```.env```.
+Agora você pode acessar o seu projeto Laravel no endereço http://localhost. Você também pode acessar o banco de dados MariaDB com o cliente de sua preferência, usando as credenciais definidas no arquivo `.env`.
