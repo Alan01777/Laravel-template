@@ -18,7 +18,7 @@ Use o comando ```git clone``` para clonar este repositório em seu diretório de
 
 ```bash
 git clone https://github.com/Alan01777/Laravel-template.git path/to/your/project/and/name
-cd "path/to/your/project/and/name"
+cd path/to/your/project/and/name
 rm -rf .git
 git init
 ```
