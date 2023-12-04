@@ -1,4 +1,4 @@
-# Template para ambiente de desenvolvimento com Laravel 🐳
+# Template para ambiente de desenvolvimento com Laravel
 
 Este template é um projeto Laravel que usa Docker para criar um ambiente de desenvolvimento com as seguintes características:
 
@@ -52,7 +52,7 @@ Estas variáveis definem o tipo de conexão, o nome do host, a porta, o nome do 
 Use o comando `docker compose up -d` para iniciar os contêineres Docker em segundo plano. Este comando irá criar e executar os seguintes serviços:
 
 -   app: o contêiner que executa o código PHP do Laravel.
--   db: o contêiner que executa o servidor MySQL.
+-   mariadb: o contêiner que executa o servidor MariaDB.
 -   nginx: o contêiner que executa o servidor web Nginx.
 
 Você pode verificar o status dos contêineres com o comando `docker compose ps`.
